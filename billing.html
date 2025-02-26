@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="sk.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing - S.K Bakery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Billing</h1>
+        <br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="items.html">Items</a></li>
+                <li><a href="billing.html">Billing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Bakery Billing Page</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #f9f3df;
+                    color: #5c3b22;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+                .container {
+                    width: 80%;
+                    margin: auto;
+                    padding: 20px;
+                    background-color: #fff7e1;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;
+                }
+        
+                header {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+        
+                header h1 {
+                    font-size: 2.5rem;
+                    margin: 0;
+                    color: #d65a31;
+                }
+        
+                .login-form, .product-selection, .billing-summary {
+                    margin-bottom: 20px;
+                }
+        
+                .login-form input, .product-selection input, .billing-summary input {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    border: 1px solid #e28743;
+                    border-radius: 5px;
+                }
+        
+                .login-form input[type="submit"] {
+                    background-color: #d65a31;
+                    color: white;
+                    cursor: pointer;
+                }
+        
+                .login-form input[type="submit"]:hover {
+                    background-color: #e28743;
+                }
+        
+                .product-selection label, .billing-summary label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                }
+        
+                .billing-summary {
+                    text-align: right;
+                }
+        
+                .billing-summary input[type="submit"], .billing-summary button {
+                    background-color: #d65a31;
+                    color: white;
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    margin-left: 10px;
+                    border: none;
+                }
+        
+                .billing-summary input[type="submit"]:hover, .billing-summary button:hover {
+                    background-color: #e28743;
+                }
+            </style>
+        </head>
+        <body>
+        
+            <div class="container">
+                <header>
+                    <h1>SK BAKERY</h1>
+                    <p>Fresh PRODUCTS Every Day</p>
+                    <p>CURRENTLY BILLING IS NOT AVAILABLE 
+                        ........WILL BE SOON..........
+                    </p>
+                </header>
+        
+                <!-- Product Selection -->
+                <div class="product-selection">
+                    <h2>Product Selection</h2>
+                    <form id="billing-form">
+                        <label for="product1">ULUNDHU VADAI - 10</label>
+                        <input type="number" id="product1" name="product1" min="0" placeholder="Enter quantity">
+        
+                        <label for="product2">TEA - 10</label>
+                        <input type="number" id="product2" name="product2" min="0" placeholder="Enter quantity">
+        
+                        <label for="product3">PARUPU VADAI -10</label>
+                        <input type="number" id="product3" name="product3" min="0" placeholder="Enter quantity">
+                        
+                        <label for="product4">COFFEE - 15</label>
+                        <input type="number" id="product4" name="product4" min="0" placeholder="Enter quantity">
+                        
+                        <label for="product5">SUKU TEA - 15</label>
+                        <input type="number" id="product5" name="product5" min="0" placeholder="Enter quantity">
+                    </form> 
+                </div>
+        
+                <!-- Billing Summary -->
+                <div class="billing-summary">
+                    <h2>Billing Summary</h2>
+                    <label for="total-amount">Total Amount: <span id="total-amount">0.00</span></label>
+                    <input type="submit" value="Proceed to Payment" onclick="calculateTotal()">
+                    <button onclick="printPage()">Print</button>
+                </div>
+            </div>
+        
+            <script>
+                function calculateTotal() {
+                    const product1Qty = parseInt(document.getElementById('product1').value) || 0;
+                    const product2Qty = parseInt(document.getElementById('product2').value) || 0;
+                    const product3Qty = parseInt(document.getElementById('product3').value) || 0;
+                    const product4Qty = parseInt(document.getElementById('product4').value) || 0;
+                    const product5Qty = parseInt(document.getElementById('product5').value) || 0;
+        
+                    const totalAmount = (product1Qty * 10.00) + (product2Qty * 10) + (product3Qty * 10)+ (product4Qty * 15.00)+ (product5Qty * 15.00);
+                    document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+        
+                    // Here you can add additional logic to proceed to the payment page or perform other actions.
+                    alert("Total Amount: " + totalAmount.toFixed(2));
+                }
+        
+                function printPage() {
+                    window.print();
+                }
+            </script>
+        
+        </body>
+        </html>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 S.K Bakery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
